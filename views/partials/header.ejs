@@ -9,5 +9,16 @@
 <body>
   <nav>
     <h1><a href="/">Job Tracker App</a></h1>
+    <ul>
+      <% if (user) { %>
+      <li>Welcome, <%=user.email %></li>
+      <li><a href="/logout">Log out</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/profile">My Profile</a></li>
+      <% } else { %>
+      <li><a href="/login">Log in</a></li>
+      <li><a href="/register">Register</a></li>
+      <% } %>
+    </ul>
   </nav>
   
