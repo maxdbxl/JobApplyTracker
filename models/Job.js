@@ -27,11 +27,11 @@ const jobSchema = new mongoose.Schema({
     },
     origin: {
         type: String,
-        //required: [true, 'Please choose the type of candidature']
+        required: [true, 'Please choose the type of candidature']
     },
     status: {
         type: String,
-        //required: [true, 'Please choose a status']
+        required: [true, 'Please choose a status']
     },
     comments: {
         type: String

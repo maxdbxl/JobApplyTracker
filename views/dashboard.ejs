@@ -1,7 +1,24 @@
 <%- include('partials/header'); -%>
 
 <h2>Test</h2>
-<h3>Coucou Laurent. Ceci est le Dashboard</h3>
+<h3>Ceci est le Dashboard</h3>
+
+<% if (jobs.length > 0) {
+    jobs.forEach(job => { %>
+        <div>
+            <p>Company: <%= job.title %></p>
+            <p>Website: <%= job.website %></p>
+            <p>Name: <%= job.employerName %></p>
+            <p>Email: <%= job.employerEmail %></p>
+            <p>Phone: <%= job.phone %></p>
+            <p>Candidature: <%= job.origin %></p>
+            <p>Status: <%= job.status %></p>
+            <p>Comments: <%= job.comments %></p>
+        </div>
+   <% })
+    console.log("coucou, voici les jobs");
+    console.log(jobs);
+} %>
 
 
 <%- include('partials/footer'); -%>
