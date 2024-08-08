@@ -32,15 +32,15 @@
     <input type="text" name="origin" required />
     <div class="origin error"></div>
 
-    <label for="status">Status</label>
-    <input type="text" name="status" />
-    <div class="status error"></div>
+    <label for="statusText">Status</label>
+    <input type="text" name="statusText" />
+    <div class="statusText error"></div>
 
     <label for="comments">Comments</label>
     <input type="text" name="comments" />
 
     <button>Add job</button>
-  </form>
+</form>
 
 
 <%- include('partials/footer'); -%>
@@ -51,7 +51,7 @@
     const employerNameError = document.querySelector(".employerName.error");
     const employerEmailError = document.querySelector(".employerEmail.error");
     const originError = document.querySelector(".origin.error");
-    const statusError = document.querySelector(".status.error");
+    const statusTextError = document.querySelector(".statusText.error");
     
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -62,7 +62,7 @@
         employerNameError.textContent = ""; 
         employerEmailError.textContent = "";
         originError.textContent = "";
-        statusError.textContent = "";
+        statusTextError.textContent = "";
 
         // Get the values
 
@@ -73,7 +73,7 @@
         const phone = form.phone.value;
         const address = form.address.value;
         const origin = form.origin.value;
-        const status = form.status.value;
+        const statusText = form.statusText.value;
         const comments = form.comments.value;
 
         try {
@@ -87,7 +87,7 @@
                     phone,
                     address,
                     origin,
-                    status,
+                    statusText,
                     comments
                 }),
                 headers: { "Content-Type": "application/json" }
@@ -98,7 +98,7 @@
                 employerNameError.textContent = data.errors.employerName;
                 employerEmailError.textContent = data.errors.employerEmail;
                 originError.textContent = data.errors.origin;
-                statusError.textContent = data.errors.status;
+                statusTextError.textContent = data.errors.statusText;
             }
         } catch (err) {
             console.log(err);

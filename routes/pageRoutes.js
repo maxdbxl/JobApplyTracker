@@ -7,8 +7,10 @@ router.get('/profile', requireAuth, pageController.profile_get);
 router.get('/dashboard', requireAuth, pageController.dashboard_get);
 router.post('/dashboard', pageController.dashboard_post);
 router.get('/job/:id', requireAuth, pageController.job_get);
-router.put('/job/:id', pageController.job_put);
+//router.put('/job/:id', pageController.job_put);
 router.get('/createjob', requireAuth, pageController.createjob_get);
 router.post('/createjob', pageController.createjob_post);
+router.get('/updatejob/:id', pageController.updatejob_get);
+router.put('/updatejob/:id', pageController.updatejob_put);
 
 module.exports = router;

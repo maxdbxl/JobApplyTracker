@@ -5,15 +5,16 @@
 
 <% if (jobs.length > 0) {
     jobs.forEach(job => { %>
-        <div>
+        <div data-id="<%=job._id%>">
             <p>Company: <%= job.title %></p>
             <p>Website: <%= job.website %></p>
             <p>Name: <%= job.employerName %></p>
             <p>Email: <%= job.employerEmail %></p>
             <p>Phone: <%= job.phone %></p>
             <p>Candidature: <%= job.origin %></p>
-            <p>Status: <%= job.status %></p>
+            <p>Status: <%= job.statusText %></p>
             <p>Comments: <%= job.comments %></p>
+            <a href="/job/<%=job._id%>">Display job</a>
         </div>
    <% })
     console.log("coucou, voici les jobs");
